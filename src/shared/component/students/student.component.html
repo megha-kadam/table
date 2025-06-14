@@ -1,0 +1,61 @@
+<div class="container-fluid my-5">
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="fName">First Name*</label>
+                        <input type="text" class="form-control" id="fName" #fName>
+                    </div>
+                    <div class="form-group">
+                        <label for="lName">Last Name*</label>
+                        <input type="text" class="form-control" id="lName" #lName>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="text" class="form-control" id="email" #email>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">Contact*</label>
+                        <input type="text" class="form-control" id="contact" #contact>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-outline-primary btn-block" (click)="onAddStd()">Add Student</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Seriol No</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>Edit</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let std of stdArr;index as i">
+                            <td>{{i + 1}}</td>
+                            <td>{{std.fName}}</td>
+                            <td>{{std.lName}}</td>
+                            <td>{{std.email}}</td>
+                            <td>{{std.contact}}</td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-info">Edit</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-sm btn-outline-danger">Remove</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
